@@ -10,6 +10,9 @@ vim.opt.softtabstop = 4
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.relativenumber = true
+vim.opt.listchars = { space = '.', tab = '->' }
+vim.opt.list = true
+vim.opt.expandtab = true
 
 -- general
 lvim.log.level = "info"
@@ -20,9 +23,9 @@ lvim.format_on_save = {
 }
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
+lvim.leader = "space"
 
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
-lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<M-o>"] = ":ClangdSwitchSourceHeader<cr>"
@@ -34,7 +37,7 @@ lvim.keys.normal_mode["ng"] = "<cmd>lua require('neogen').generate() <CR>"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["gn"] = { "<cmd> lua require('neogit').open() <CR>", "neogit" }
 
 lvim.builtin.which_key.mappings["x"] = { "<cmd> bdelete!<CR>", "close buffer" }
@@ -61,7 +64,7 @@ lvim.builtin.which_key.mappings["w"] = {
 }
 
 -- -- Change theme settings
--- lvim.colorscheme = "lunar"
+lvim.colorscheme = "catppuccin_latte"
 
 lvim.builtin.lualine.style = "default"
 lvim.builtin.alpha.active = true
@@ -138,7 +141,11 @@ lvim.plugins = {
     { 'Shatur/neovim-tasks' },
     { 'TimUntersberger/neogit' },
     { 'danymat/neogen' },
-    { "azabiong/vim-highlighter" }
+    { "azabiong/vim-highlighter" },
+    { "ellisonleao/gruvbox.nvim" },
+    { "folke/tokyonight.nvim" },
+    { "Mofiqul/vscode.nvim" },
+    { "catppuccin/vim" }
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
@@ -176,3 +183,4 @@ require('tasks').setup({
 
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "^./.git/", "^./build/", "^.vscode/", "%%-test%-data",
     "^.cache/" }
+require("dap.ext.vscode").load_launchjs(nil, { lldb = { "c", "cpp" } })
