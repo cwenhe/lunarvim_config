@@ -1,0 +1,68 @@
+{
+    "class inherit": {
+        "prefix": "clai",
+        "body": [
+            "class ${1:ClassName} :public ${2:BaseClass} {",
+            "\t$3",
+            "};\n"
+        ],
+        "description": "snippet for a class-inherit declaration"
+    },
+    "namespace": {
+        "prefix": "namespace",
+        "body": [
+            "namespace $1{",
+            "\t$2",
+            "}//$1\n"
+        ]
+    },
+    "binder key": {
+        "prefix": "bind",
+        "body": [
+            "binder->bind(\"${1:key}\",${2:dst});"
+        ],
+        "description": "binder member"
+    },
+    "define variable": {
+        "prefix": "auto",
+        "body": [
+            "auto ${1:var} = ${2:source};"
+        ],
+        "description": "define variable"
+    },
+    "declaration setbind function": {
+        "prefix": "dbind",
+        "body": [
+            "void setBind(cppbind::Binder* binder, bool load);"
+        ],
+        "description": "declare setbind function"
+    },
+    "ClassName": {
+        "prefix": "ClassName",
+        "body": [
+            "static std::string ClassName(){",
+            "\treturn \"${1:ClassName}\";",
+            "}"
+        ],
+        "description": "define static ClassName function"
+    },
+    "for iterator": {
+        "prefix": "fori",
+        "body": [
+            "for(auto ${1:iter} = ${2:container}.begin(); ${2}.end() != ${1}; ++${1}) {",
+            "\t$3",
+            "}"
+        ]
+    },
+    "Data4Bind": {
+        "prefix": "DBind",
+        "body": [
+            "const getData4Bind() const{",
+            "\treturn data_;",
+            "}",
+            "private:",
+            "\tData4Bind data_;"
+        ],
+        "description": "define static ClassName function"
+    }
+}
