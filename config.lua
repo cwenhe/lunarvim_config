@@ -33,6 +33,8 @@ lvim.keys.normal_mode["q"] = "<cmd> cclose<CR>"
 lvim.keys.normal_mode["ng"] = "<cmd>lua require('neogen').generate() <CR>"
 lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
 lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
+lvim.keys.normal_mode["<M-h>"] = ":ToggleTerm size=40 direction=horizontal <CR>"
+lvim.keys.term_mode["<M-h>"] = "<C-\\><C-n> <cmd> q<CR>"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
