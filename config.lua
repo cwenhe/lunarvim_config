@@ -31,6 +31,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<M-o>"] = ":ClangdSwitchSourceHeader<cr>"
 lvim.keys.normal_mode["q"] = "<cmd> cclose<CR>"
 lvim.keys.normal_mode["ng"] = "<cmd>lua require('neogen').generate() <CR>"
+lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
+lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -145,7 +147,32 @@ lvim.plugins = {
     { "ellisonleao/gruvbox.nvim" },
     { "folke/tokyonight.nvim" },
     { "Mofiqul/vscode.nvim" },
-    { "catppuccin/vim" }
+    { "catppuccin/vim" },
+    {
+        "phaazon/hop.nvim",
+        event = "BufRead",
+        config = function()
+            require("hop").setup()
+        end,
+    },
+    {
+        "ggandor/lightspeed.nvim",
+        event = "BufRead",
+    },
+    {
+        "folke/todo-comments.nvim",
+        event = "BufRead",
+        config = function()
+            require("todo-comments").setup()
+        end,
+    },
+    -- {
+    --     "windwp/nvim-spectre",
+    --     event = "BufRead",
+    --     config = function()
+    --         require("spectre").setup()
+    --     end,
+    -- },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
@@ -180,7 +207,27 @@ require('tasks').setup({
     dap_open_command = function() return require('dap').repl.open() end, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
 })
 
+-- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--     {
+--         command = "prettier",
+--         -- extra_args = { "--print-width", "100" },
+--         filetypes = { "json" },
+--     },
+-- }
 
+
+lvim.builtin.treesitter.highlight.disable = function(lang, buf)
+    local max_filesize = 100 * 1024 -- 100 KB
+    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+    if ok and stats and stats.size > max_filesize then
+        return true
+    end
+end
+
+lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
+lvim.builtin.indentlines.options.show_current_context = true
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "^./.git/", "^./build/", "^.vscode/", "%%-test%-data",
     "^.cache/" }
 require("dap.ext.vscode").load_launchjs(nil, { lldb = { "c", "cpp" } })
