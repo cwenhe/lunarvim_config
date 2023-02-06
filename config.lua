@@ -48,7 +48,7 @@ lvim.builtin.which_key.mappings["x"] = { "<cmd> bdelete!<CR>", "close buffer" }
 lvim.builtin.which_key.mappings["c"] = {
     name = "cmake",
     c = { "<cmd> Task start cmake configure<cr>", "configure" },
-    b = { "<cmd> Task start cmake build_all <cr>", "build" },
+    b = { "<cmd> Task start cmake build_all -j=30<cr>", "build" },
     s = { "<cmd> Task cancel<cr>", "cancel" },
     C = { "<cmd> Task start cmake clean<cr>", "clean" },
 }
@@ -66,6 +66,10 @@ lvim.builtin.which_key.mappings["w"] = {
     -- - = { "<cmd> exec 'vertical resize -'. string(&columns * 0.1) <CR>", "windows resize -" }
     -- ["<leader>w"] = {"", " windows"},
 }
+lvim.builtin.which_key.mappings["w="] = { "<cmd> exec 'vertical resize +'. string(&columns * 0.1) <CR>",
+    "windows resize +" }
+lvim.builtin.which_key.mappings["w-"] = { "<cmd> exec 'vertical resize -'. string(&columns * 0.1) <CR>",
+    "windows resize -" }
 
 -- -- Change theme settings
 lvim.colorscheme = "catppuccin_latte"
@@ -210,12 +214,12 @@ require('tasks').setup({
 })
 
 -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
 -- formatters.setup {
+-- local formatters = require "lvim.lsp.null-ls.formatters"
 --     {
 --         command = "prettier",
---         -- extra_args = { "--print-width", "100" },
 --         filetypes = { "json" },
+--         -- extra_args = { "--print-width", "100" },
 --     },
 -- }
 

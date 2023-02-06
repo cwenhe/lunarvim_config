@@ -1,6 +1,6 @@
+"class inherit": {
 {
-    "class inherit": {
-        "prefix": "clai",
+        "prefix": "cli",
         "body": [
             "class ${1:ClassName} :public ${2:BaseClass} {",
             "\t$3",
