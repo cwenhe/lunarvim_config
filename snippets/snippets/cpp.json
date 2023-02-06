@@ -1,5 +1,5 @@
 "class inherit": {
-{
+    {
         "prefix": "cli",
         "body": [
             "class ${1:ClassName} :public ${2:BaseClass} {",
