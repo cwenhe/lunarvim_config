@@ -51,6 +51,7 @@ lvim.builtin.which_key.mappings["c"] = {
     b = { "<cmd> Task start cmake build_all -j=30<cr>", "build" },
     s = { "<cmd> Task cancel<cr>", "cancel" },
     C = { "<cmd> Task start cmake clean<cr>", "clean" },
+    e = { "<cmd> FencView<cr>", "change file encoding" }
 }
 
 lvim.builtin.which_key.mappings["w"] = {
@@ -148,7 +149,11 @@ lvim.plugins = {
     -- },
     { 'Shatur/neovim-tasks' },
     { 'TimUntersberger/neogit' },
-    { 'danymat/neogen' },
+    { 'mbbill/fencview' },
+    { 'danymat/neogen',
+        config = function()
+            require('neogen').setup {}
+        end },
     { "azabiong/vim-highlighter" },
     { "ellisonleao/gruvbox.nvim" },
     { "folke/tokyonight.nvim" },
