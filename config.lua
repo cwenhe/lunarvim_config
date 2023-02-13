@@ -116,22 +116,21 @@ lvim.builtin.treesitter.auto_install = true
 -- end
 
 -- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+    {
+        command = "autoflake",
+        args = { "--stdin-display-name", "$FILENAME", "-" },
+        filetypes = { "python" },
+    },
+}
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     command = "shellcheck",
---     args = { "--severity", "warning" },
---   },
+--     { command = "flake8", filetypes = { "python" } },
+--     {
+--         command = "shellcheck",
+--         args = { "--severity", "warning" },
+--     },
 -- }
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
@@ -160,6 +159,8 @@ lvim.plugins = {
     { "folke/tokyonight.nvim" },
     { "Mofiqul/vscode.nvim" },
     { "catppuccin/vim" },
+    --clipboard
+    { "ojroques/nvim-osc52" },
     {
         "phaazon/hop.nvim",
         event = "BufRead",
@@ -243,3 +244,24 @@ lvim.builtin.indentlines.options.show_current_context = true
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "^./.git/", "^./build/", "^.vscode/", "%%-test%-data",
     "^.cache/" }
 require("dap.ext.vscode").load_launchjs(nil, { lldb = { "c", "cpp" } })
+
+
+-----------------------begin clipboard config -------------------------------------------
+local function copy(lines, _)
+    require('osc52').copy(table.concat(lines, '\n'))
+end
+
+local function paste()
+    return { vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('') }
+end
+
+vim.g.clipboard = {
+    name = 'osc52',
+    copy = { ['+'] = copy, ['*'] = copy },
+    paste = { ['+'] = paste, ['*'] = paste },
+}
+
+-- Now the '+' register will copy to system clipboard using OSC52
+vim.keymap.set('n', '<leader>c', '"+y')
+vim.keymap.set('n', '<leader>cc', '"+yy')
+-----------------------end clipboard config -------------------------------------------
