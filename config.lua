@@ -259,6 +259,11 @@ lvim.builtin.cmp.formatting = {
 lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
 lvim.builtin.indentlines.options.show_current_context = true
+lvim.builtin.telescope.defaults.path_display = {
+    shorten = {
+        len = 3
+    }
+}
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "^./.git/", "^./build/", "^.vscode/", "%%-test%-data",
     "^.cache/" }
 require("dap.ext.vscode").load_launchjs(nil, { lldb = { "c", "cpp" } })
