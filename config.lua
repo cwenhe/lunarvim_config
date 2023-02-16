@@ -40,8 +40,8 @@ lvim.keys.term_mode["<M-h>"] = "<C-\\><C-n> <cmd> q<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["gn"] = { "<cmd> lua require('neogit').open() <CR>", "neogit" }
 
 lvim.builtin.which_key.mappings["x"] = { "<cmd> bdelete!<CR>", "close buffer" }
@@ -247,6 +247,14 @@ lvim.builtin.treesitter.highlight.disable = function(lang, buf)
     end
 end
 
+lvim.builtin.cmp.formatting = {
+    format = function(entry, vim_item)
+        ---设置提示宽度为屏幕大小的三分之一
+        vim_item.abbr = string.sub(vim_item.abbr, 1, vim.o.columns / 3)
+        return vim_item
+    end
+}
+-- lvim.builtin.cmp.completion.keyword_length = 2
 lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
 lvim.builtin.indentlines.options.show_current_context = true
