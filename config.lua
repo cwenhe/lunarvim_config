@@ -10,7 +10,8 @@ vim.opt.softtabstop = 4
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.relativenumber = true
-vim.opt.listchars = { space = '.', tab = '->' }
+vim.opt.listchars = { tab = '->' }
+-- vim.opt.listchars = { space = '.', tab = '->' }
 vim.opt.list = true
 vim.opt.expandtab = true
 
