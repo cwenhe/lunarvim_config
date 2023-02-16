@@ -180,6 +180,14 @@ lvim.plugins = {
         end,
     },
     -- {
+    --     "zbirenbaum/copilot.lua",
+    --     cmd = "Copilot",
+    --     event = "InsertEnter",
+    --     config = function()
+    --     end,
+    --     require("copilot").setup({})
+    -- }
+    -- {
     --     "windwp/nvim-spectre",
     --     event = "BufRead",
     --     config = function()
@@ -239,6 +247,7 @@ lvim.builtin.treesitter.highlight.disable = function(lang, buf)
     end
 end
 
+lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
 lvim.builtin.indentlines.options.show_current_context = true
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "^./.git/", "^./build/", "^.vscode/", "%%-test%-data",
@@ -260,6 +269,11 @@ vim.g.clipboard = {
     copy = { ['+'] = copy, ['*'] = copy },
     paste = { ['+'] = paste, ['*'] = paste },
 }
+
+-- Now the '+' register will copy to system clipboard using OSC52
+vim.keymap.set('n', '<leader>c', '"+y')
+vim.keymap.set('n', '<leader>cc', '"+yy')
+-----------------------end clipboard config -------------------------------------------
 
 -- Now the '+' register will copy to system clipboard using OSC52
 vim.keymap.set('n', '<leader>c', '"+y')
