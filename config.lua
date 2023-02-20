@@ -36,14 +36,14 @@ lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
 lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
 lvim.keys.normal_mode["<M-h>"] = ":ToggleTerm size=40 direction=horizontal <CR>"
 lvim.keys.term_mode["<M-h>"] = "<C-\\><C-n> <cmd> q<CR>"
+lvim.keys.insert_mode["jk"] = "<esc>"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
-lvim.builtin.which_key.mappings["gn"] = { "<cmd> lua require('neogit').open() <CR>", "neogit" }
+lvim.builtin.which_key.mappings["bw"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 
 lvim.builtin.which_key.mappings["x"] = { "<cmd> bdelete!<CR>", "close buffer" }
 lvim.builtin.which_key.mappings["c"] = {
@@ -149,7 +149,6 @@ lvim.plugins = {
     --   cmd = "TroubleToggle",
     -- },
     { 'Shatur/neovim-tasks' },
-    { 'TimUntersberger/neogit' },
     { 'mbbill/fencview' },
     { 'danymat/neogen',
         config = function()
@@ -241,12 +240,30 @@ require('tasks').setup({
 
 
 lvim.builtin.treesitter.highlight.disable = function(lang, buf)
-    local max_filesize = 100 * 1024 -- 100 KB
+    -- if lang == "json" then
+    --     return true
+    -- end
+    -- local max_filesize = 100 * 1024 -- 100 KB
+    local max_filesize = 100 -- 100 KB
     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
     if ok and stats and stats.size > max_filesize then
         return true
     end
+    return false
 end
+
+lvim.builtin.treesitter.indent.disable = function(lang, buf)
+    if lang == "c" or lang == "cpp" then
+        return true
+    end
+    local max_filesize = 100 -- 100 KB
+    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+    if ok and stats and stats.size > max_filesize then
+        return true
+    end
+    return false
+end
+
 
 lvim.builtin.cmp.formatting = {
     format = function(entry, vim_item)
@@ -256,10 +273,10 @@ lvim.builtin.cmp.formatting = {
     end
 }
 -- lvim.builtin.cmp.completion.keyword_length = 2
-lvim.builtin.treesitter.indent = {
-    disable = { "c", "cpp" },
-    enabled = true
-}
+-- lvim.builtin.treesitter.indent = {
+--     disable = { "c", "cpp" },
+--     enabled = true
+-- }
 lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
 lvim.builtin.indentlines.options.show_current_context = true
