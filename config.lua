@@ -256,6 +256,10 @@ lvim.builtin.cmp.formatting = {
     end
 }
 -- lvim.builtin.cmp.completion.keyword_length = 2
+lvim.builtin.treesitter.indent = {
+    disable = { "c", "cpp" },
+    enabled = true
+}
 lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
 lvim.builtin.indentlines.options.show_current_context = true
