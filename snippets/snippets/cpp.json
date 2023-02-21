@@ -2,7 +2,7 @@
     "for": {
         "prefix": "for",
         "body": [
-            "for (auto ${1:&value}: ${2: container} )",
+            "for (auto ${1:&value}: ${2: container} ){",
             "\t$0",
             "}"
         ],
@@ -198,8 +198,8 @@
     "struct": {
         "prefix": "struct",
         "body": [
-            "\t$0",
             "struct ${1:MyStruct} {",
+            "\t$0",
             "};"
         ],
         "description": "Code snippet for struct"
