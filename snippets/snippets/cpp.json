@@ -1,4 +1,12 @@
 {
+    "document": {
+        "prefix": "brief",
+        "body": [
+            "/**",
+            "* @brief $1",
+            "*/"
+        ]
+    },
     "for": {
         "prefix": "for",
         "body": [
