@@ -15,13 +15,19 @@ vim.opt.list = true
 vim.opt.expandtab = true
 
 
-local __path = debug.getinfo(1, "S").source:sub(2)
-local __dir = string.match(__path, "(.*/)")
-package.path = __dir .. "?.lua;" .. package.path
+local function init_package_path()
+    --获取当前文件所在路径
+    local __path = debug.getinfo(1, "S").source:sub(2)
+    local __dir = string.match(__path, "(.*/)")
+    package.path = __dir .. "?.lua;" .. package.path
+end
+
+init_package_path()
+
 require("builtin_config")
 require("mappings")
 require("plugins")
-require("my_plugins.dap")
-require("my_plugins.tasks")
-require("my_plugins.osc52")
-require("my_plugins.null-ls")
+require("config.dap")
+require("config.tasks")
+require("config.osc52")
+require("config.null-ls")
