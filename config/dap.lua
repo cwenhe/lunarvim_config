@@ -25,9 +25,9 @@ dap.adapters.lldb = {
 --
 -----------------------  begin dap ui config --------------------------------------
 local dap, dapui = require "dap", require "dapui"
-dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
-end
+-- dap.listeners.after.event_initialized["dapui_config"] = function()
+--     dapui.open()
+-- end
 dap.listeners.before.event_terminated["dapui_config"] = function()
     dapui.close()
     dap.repl.close {}
@@ -111,11 +111,20 @@ dapui.setup {
     },
 }
 
-vim.api.nvim_create_autocmd("DirChanged", {
-    callback = function()
+local function local_launch_js()
+    local cur_cwd = vim.fn.getcwd()
+    local launch_file = cur_cwd .. '/.vscode/launch.json'
+    local stat = vim.loop.fs_stat(launch_file)
+    if stat then
         require("dap.ext.vscode").load_launchjs(nil, {
             cppdbg = { "c", "cpp" },
             lldb = { "c", "cpp" }
         })
-    end,
+    end
+end
+
+local_launch_js()
+
+vim.api.nvim_create_autocmd("DirChanged", {
+    callback = local_launch_js
 })
