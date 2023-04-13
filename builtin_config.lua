@@ -1,6 +1,7 @@
 -- general
 lvim.log.level = "info"
 lvim.lsp.log_levels = "OFF"
+-- lvim.lsp.log_levels = "OFF"
 lvim.format_on_save = {
     enabled = true,
     pattern = "*.lua",

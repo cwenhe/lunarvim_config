@@ -17,6 +17,7 @@ lvim.keys.insert_mode["jk"] = "<esc>"
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["bw"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["bc"] = { "<cmd>enew<cr>", "new buffer" }
+lvim.builtin.which_key.mappings["bC"] = { "ggdG", "clear buffer content" }
 
 lvim.builtin.which_key.mappings["x"] = { "<cmd> bdelete!<CR>", "close buffer" }
 lvim.builtin.which_key.mappings["c"] = {

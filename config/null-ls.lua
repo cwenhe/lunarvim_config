@@ -17,11 +17,12 @@ formatters.setup {
 -- }
 --
 -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
--- formatters.setup {
--- local formatters = require "lvim.lsp.null-ls.formatters"
---     {
---         command = "prettier",
---         filetypes = { "json" },
---         -- extra_args = { "--print-width", "100" },
---     },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+    {
+        command = "jq",
+        filetypes = { "json" },
+        -- extra_args = { "--print-width", "100" },
+        extra_args = { "." },
+    },
+}
