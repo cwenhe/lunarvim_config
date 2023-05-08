@@ -50,6 +50,12 @@ lvim.builtin.treesitter.indent.disable = function(lang, buf)
 end
 
 
+-- 设置最大提示数量
+for k, v in ipairs(lvim.builtin.cmp.sources) do
+    -- print(k, v.name, v.max_item_count)
+    v.max_item_count = 8
+end
+
 lvim.builtin.cmp.formatting = {
     format = function(entry, vim_item)
         ---设置提示宽度为屏幕大小的三分之一

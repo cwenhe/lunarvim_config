@@ -45,6 +45,12 @@ lvim.plugins = {
     },
     {
         "rcarriga/nvim-dap-ui"
+    },
+    {
+        'tzachar/cmp-tabnine',
+        build = './install.sh',
+        dependencies = 'hrsh7th/nvim-cmp',
+        event = "InsertEnter"
     }
     -- {
     --     "zbirenbaum/copilot.lua",
