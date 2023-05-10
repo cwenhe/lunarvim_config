@@ -1,5 +1,5 @@
 -- general
-lvim.log.level = "info"
+lvim.log.level = "error"
 lvim.lsp.log_levels = "OFF"
 -- lvim.lsp.log_levels = "OFF"
 lvim.format_on_save = {
