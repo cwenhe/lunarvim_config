@@ -17,11 +17,11 @@ lvim.plugins = {
         end
     },
     { "azabiong/vim-highlighter" },
-    { "ellisonleao/gruvbox.nvim" },
     { "folke/tokyonight.nvim" },
-    { "EdenEast/nightfox.nvim" },
-    { "Mofiqul/vscode.nvim" },
-    { "catppuccin/vim" },
+    -- { "ellisonleao/gruvbox.nvim" },
+    -- { "EdenEast/nightfox.nvim" },
+    -- { "Mofiqul/vscode.nvim" },
+    -- { "catppuccin/vim" },
     -- {"p00f/clangd_extensions.nvim"},
     --clipboard
     { "ojroques/nvim-osc52" },
@@ -32,10 +32,10 @@ lvim.plugins = {
             require("hop").setup()
         end,
     },
-    {
-        "ggandor/lightspeed.nvim",
-        event = "BufRead",
-    },
+    -- {
+    --     "ggandor/lightspeed.nvim",
+    --     event = "BufRead",
+    -- },
     {
         "folke/todo-comments.nvim",
         event = "BufRead",
@@ -46,12 +46,12 @@ lvim.plugins = {
     {
         "rcarriga/nvim-dap-ui"
     },
-    {
-        'tzachar/cmp-tabnine',
-        build = './install.sh',
-        dependencies = 'hrsh7th/nvim-cmp',
-        event = "InsertEnter"
-    }
+    -- {
+    --     'tzachar/cmp-tabnine',
+    --     build = './install.sh',
+    --     dependencies = 'hrsh7th/nvim-cmp',
+    --     event = "InsertEnter"
+    -- }
     -- {
     --     "zbirenbaum/copilot.lua",
     --     cmd = "Copilot",
