@@ -23,7 +23,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
-
 lvim.builtin.treesitter.highlight.disable = function(lang, buf)
     if lang == "json" then
         return true
@@ -50,24 +49,6 @@ lvim.builtin.treesitter.indent.disable = function(lang, buf)
 end
 
 
--- 设置最大提示数量
-for k, v in ipairs(lvim.builtin.cmp.sources) do
-    -- print(k, v.name, v.max_item_count)
-    v.max_item_count = 8
-end
-
-lvim.builtin.cmp.formatting = {
-    format = function(entry, vim_item)
-        ---设置提示宽度为屏幕大小的三分之一
-        vim_item.abbr = string.sub(vim_item.abbr, 1, vim.o.columns / 3)
-        return vim_item
-    end
-}
--- lvim.builtin.cmp.completion.keyword_length = 2
--- lvim.builtin.treesitter.indent = {
---     disable = { "c", "cpp" },
---     enabled = true
--- }
 lvim.builtin.project.patterns = { ".git", "conf.json" }
 lvim.builtin.luasnip.sources.friendly_snippets = false
 -- lvim.builtin.luasnip.sources.friendly_snippets = false
