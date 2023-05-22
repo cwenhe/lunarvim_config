@@ -9,3 +9,42 @@ lvim.builtin.which_key.mappings["ls"] = { "<cmd>  Lspsaga outline<CR>", "Documen
 -- lvim.builtin.which_key.mappings["lr"] = { "<cmd>  Lspsaga rename<CR>", "Rename" }
 lvim.builtin.which_key.mappings["lci"] = { "<cmd>  Lspsaga incoming_calls<CR>", "Incomming calls" }
 lvim.builtin.which_key.mappings["lco"] = { "<cmd>  Lspsaga outgoing_calls<CR>", "OutGoing calls" }
+
+
+require("lspsaga").setup({
+    outline = {
+        win_position = "right",
+        win_with = "",
+        win_width = 30,
+        preview_width = 0.4,
+        show_detail = true,
+        auto_preview = true,
+        auto_refresh = true,
+        auto_close = true,
+        auto_resize = true,
+        custom_sort = nil,
+        keys = {
+            expand_or_jump = 'o',
+            quit = "q",
+        },
+    },
+    definition = {
+        edit = "e",
+        vsplit = "v",
+        split = "i",
+        tabe = "t",
+        quit = "q",
+    },
+    -- callhierarchy = {
+    --     show_detail = true,
+    --     keys = {
+    --         edit = "e",
+    --         vsplit = "s",
+    --         split = "i",
+    --         tabe = "t",
+    --         jump = "o",
+    --         quit = "q",
+    --         expand_collapse = "u",
+    --     },
+    -- },
+})

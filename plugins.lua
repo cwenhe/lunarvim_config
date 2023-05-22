@@ -11,7 +11,7 @@ lvim.plugins = {
         "glepnir/lspsaga.nvim",
         event = "LspAttach",
         config = function()
-            require("lspsaga").setup({})
+            require("config.lspsaga")
         end,
         dependencies = {
             { "nvim-tree/nvim-web-devicons" },
