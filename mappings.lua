@@ -72,3 +72,4 @@ vim.keymap.set('n', '<leader>cc', '"+yy')
 vim.keymap.set('n', '<leader>c', '"+y')
 vim.keymap.set('n', '<leader>cc', '"+yy')
 -----------------------end clipboard config -------------------------------------------
+---
