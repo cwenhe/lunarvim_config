@@ -70,6 +70,14 @@ lvim.plugins = {
     {
         "rcarriga/nvim-dap-ui"
     },
+    {
+        "Weissle/persistent-breakpoints.nvim",
+        config = function()
+            require("persistent-breakpoints").setup {
+                load_breakpoints_event = { "BufReadPost" }
+            }
+        end,
+    }
     -- {
     --     'tzachar/cmp-tabnine',
     --     build = './install.sh',
