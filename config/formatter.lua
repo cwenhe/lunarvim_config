@@ -13,6 +13,7 @@ require("formatter").setup {
         -- and will be executed in order
         lua = require("formatter.filetypes.lua"),
         json = require("formatter.filetypes.json").jq,
+        python = require("formatter.filetypes.python").autopep8,
 
         cpp = require("formatter.filetypes.cpp").clangformat,
         cmake = require("formatter.filetypes.cmake").cmakeformat,
