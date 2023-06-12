@@ -57,3 +57,24 @@ lvim.builtin.cmp.matching = {
 --     disable = { "c", "cpp" },
 --     enabled = true
 -- }
+
+lvim.autocommands = {
+    {
+        { "BufEnter" },
+        {
+            pattern = "*",
+            desc = "Disable cmp in files larger than 1MB",
+            callback = function(args)
+                -- local highlighter = require "vim.treesitter.highlighter"
+                -- local ts_was_active = highlighter.active[args.buf]
+                local file_size = vim.fn.getfsize(args.file)
+                if (file_size > 1024 * 1024) then
+                    require("cmp").setup({ enabled = false })
+                    -- if (ts_was_active) then
+                    -- vim.notify("File larger than 1MB, turned off syntax highlighting")
+                end
+                -- end
+            end
+        }
+    }
+}

@@ -35,43 +35,4 @@ require("config.tabnine")
 require("config.cmp")
 require("config.lspsaga")
 require("config.luasnip")
-
--- lvim.autocommands = {
---     {
---         { "BufEnter" },
---         {
---             pattern = "*",
---             desc = "Disable syntax highlighting in files larger than 1MB",
---             callback = function(args)
---                 local highlighter = require "vim.treesitter.highlighter"
---                 local ts_was_active = highlighter.active[args.buf]
---                 local file_size = vim.fn.getfsize(args.file)
---                 if (file_size > 1024 * 1024) then
---                     vim.cmd("TSBufDisable highlight")
---                     vim.cmd("syntax off")
---                     vim.cmd("syntax clear")
---                     vim.cmd("IlluminatePauseBuf")
---                     vim.cmd("IndentBlanklineDisable")
---                     vim.cmd("NoMatchParen")
---                     if (ts_was_active) then
---                         vim.notify("File larger than 1MB, turned off syntax highlighting")
---                     end
---                 end
---             end
---         }
---     }
--- }
-
-require("bigfile").config {
-    filesize = 1,      -- size of the file in MiB, the plugin round file sizes to the closest MiB
-    pattern = { "*" }, -- autocmd pattern
-    features = {       -- features to disable
-        "indent_blankline",
-        "illuminate",
-        "treesitter",
-        "syntax",
-        "matchparen",
-        "vimopts",
-        "filetype",
-    },
-}
+require("config.bigfile")

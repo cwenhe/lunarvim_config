@@ -8,6 +8,12 @@ lvim.plugins = {
         "ianding1/leetcode.vim"
     },
     {
+        "mhartington/formatter.nvim",
+        config = function()
+            require("config.formatter")
+        end,
+    },
+    {
         "glepnir/lspsaga.nvim",
         event = "LspAttach",
         config = function()

@@ -75,3 +75,5 @@ vim.keymap.set('n', '<leader>c', '"+y')
 vim.keymap.set('n', '<leader>cc', '"+yy')
 -----------------------end clipboard config -------------------------------------------
 ---
+---
+-- lvim.builtin.which_key.mappings["lf"] = { "<cmd> FormatWriter<cr>", "format file" }

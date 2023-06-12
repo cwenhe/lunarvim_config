@@ -1,6 +1,6 @@
 -- general
 lvim.log.level = "error"
-lvim.lsp.log_levels = "OFF"
+lvim.lsp.log_levels = vim.log.levels.OFF
 -- lvim.lsp.log_levels = "OFF"
 lvim.format_on_save = {
     enabled = true,
@@ -23,30 +23,6 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
-lvim.builtin.treesitter.highlight.disable = function(lang, buf)
-    if lang == "json" then
-        return true
-    end
-    -- local max_filesize = 100 * 1024 -- 100 KB
-    -- local max_filesize = 100 -- 100 KB
-    -- local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    -- if ok and stats and stats.size > max_filesize then
-    --     return true
-    -- end
-    return false
-end
-
-lvim.builtin.treesitter.indent.disable = function(lang, buf)
-    if lang == "c" or lang == "cpp" then
-        return true
-    end
-    local max_filesize = 100 -- 100 KB
-    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    if ok and stats and stats.size > max_filesize then
-        return true
-    end
-    return false
-end
 
 
 lvim.builtin.project.patterns = { ".git", "conf.json" }
