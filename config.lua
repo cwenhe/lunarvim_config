@@ -15,11 +15,18 @@ vim.opt.list = true
 vim.opt.expandtab = true
 
 
+
+local function getpath()
+    local str = debug.getinfo(2, "S").source:sub(2)
+    if package.config:sub(1, 1) == '\\' then -- 判断是否Windows
+        return str:match("(.*\\)")
+    else
+        return str:match("(.*/)")
+    end
+end
 local function init_package_path()
     --获取当前文件所在路径
-    local __path = debug.getinfo(1, "S").source:sub(2)
-    local __dir = string.match(__path, "(.*/)")
-    package.path = __dir .. "?.lua;" .. package.path
+    package.path = getpath() .. "?.lua;" .. package.path
 end
 
 init_package_path()
