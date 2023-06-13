@@ -52,7 +52,13 @@ lvim.builtin.which_key.mappings["w-"] = { "<cmd> exec 'vertical resize -'. strin
 -----------------------  end dap config --------------------------------------
 
 
-lvim.builtin.which_key.mappings["dt"] = { "<cmd> lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" }
+lvim.builtin.which_key.mappings["dt"] = { "<cmd> lua require('persistent-breakpoints.api').toggle_breakpoint()<CR>",
+    "Toggle Breakpoint" }
+lvim.builtin.which_key.mappings["dB"] = {
+    "<cmd> lua require('persistent-breakpoints.api').set_conditional_breakpoint()<CR>",
+    "Set Condition Breakpoint" }
+lvim.builtin.which_key.mappings["dx"] = { "<cmd> lua require('persistent-breakpoints.api').clear_all_breakpoints()<CR>",
+    "Clear All Breakpoint" }
 lvim.keys.normal_mode["<F5>"] = " <Cmd>lua require'dap'.continue()<CR>"
 lvim.keys.normal_mode["<F10>"] = " <Cmd>lua require'dap'.step_over()<CR>"
 lvim.keys.normal_mode["<F11>"] = " <Cmd>lua require'dap'.step_into()<CR>"
