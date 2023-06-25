@@ -5,6 +5,18 @@ lvim.plugins = {
     -- },
     -- {"weilbith/nvim-code-action-menu"},
     {
+        "stevearc/dressing.nvim",
+        config = function()
+            require('config.dressing')
+        end
+    },
+    {
+        "Shatur/neovim-session-manager",
+        config = function()
+            require("config.session")
+        end
+    },
+    {
         "ianding1/leetcode.vim"
     },
     {
