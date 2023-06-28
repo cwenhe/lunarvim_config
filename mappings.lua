@@ -79,6 +79,9 @@ vim.keymap.set('n', '<leader>cc', '"+yy')
 -- Now the '+' register will copy to system clipboard using OSC52
 vim.keymap.set('n', '<leader>c', '"+y')
 vim.keymap.set('n', '<leader>cc', '"+yy')
+
+-- lvim.keys.normal_mode["P"] = ":SessionManager load_session<CR>"
+lvim.builtin.which_key.mappings["P"] = { ":SessionManager load_session<CR>", "Sessions" }
 -----------------------end clipboard config -------------------------------------------
 ---
 ---
