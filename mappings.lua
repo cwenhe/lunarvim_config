@@ -82,6 +82,19 @@ vim.keymap.set('n', '<leader>cc', '"+yy')
 
 -- lvim.keys.normal_mode["P"] = ":SessionManager load_session<CR>"
 lvim.builtin.which_key.mappings["P"] = { ":SessionManager load_session<CR>", "Sessions" }
+lvim.builtin.alpha.dashboard.section.buttons.entries = {
+    { "f", lvim.icons.ui.FindFile .. "  Find File",   "<CMD>Telescope find_files<CR>" },
+    { "p", lvim.icons.ui.Project .. "  Sessions",     "<CMD>SessionManager load_session<CR>" },
+    { "n", lvim.icons.ui.NewFile .. "  New File",     "<CMD>ene!<CR>" },
+    { "r", lvim.icons.ui.History .. "  Recent files", ":Telescope oldfiles <CR>" },
+    { "t", lvim.icons.ui.FindText .. "  Find Text",   "<CMD>Telescope live_grep<CR>" },
+    {
+        "c",
+        lvim.icons.ui.Gear .. "  Configuration",
+        "<CMD>edit " .. require("lvim.config"):get_user_config_path() .. " <CR>",
+    },
+    { "q", lvim.icons.ui.Close .. "  Quit", "<CMD>quit<CR>" },
+}
 -----------------------end clipboard config -------------------------------------------
 ---
 ---
