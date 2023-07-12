@@ -4,12 +4,13 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<M-o>"] = ":ClangdSwitchSourceHeader<cr>"
 lvim.keys.normal_mode["q"] = "<cmd> cclose<CR>"
 lvim.keys.normal_mode["ng"] = "<cmd>lua require('neogen').generate() <CR>"
-lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
-lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
+-- lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
+-- lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
 lvim.keys.normal_mode["go"] = "<C-o>"
 lvim.keys.normal_mode["<M-h>"] = ":ToggleTerm size=40 direction=horizontal <CR>"
 lvim.keys.term_mode["<M-h>"] = "<C-\\><C-n> <cmd> q<CR>"
-lvim.keys.insert_mode["jk"] = "<esc>"
+lvim.keys.insert_mode["jk"] = "<esc>l"
+lvim.keys.insert_mode[";;"] = "::"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -19,6 +20,7 @@ lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Project
 lvim.builtin.which_key.mappings["bw"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["bc"] = { "<cmd>enew<cr>", "new buffer" }
 lvim.builtin.which_key.mappings["bC"] = { "ggdG", "clear buffer content" }
+lvim.builtin.which_key.mappings["br"] = { "<cmd>e! <cr>", " reload buffer" }
 
 lvim.builtin.which_key.mappings["x"] = { "<cmd> bdelete!<CR>", "close buffer" }
 lvim.builtin.which_key.mappings["c"] = {

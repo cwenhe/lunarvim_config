@@ -7,11 +7,16 @@ lvim.lsp.buffer_mappings.normal_mode['gm'] = { " <Cmd>Lspsaga outline<CR>", "Sho
 lvim.builtin.which_key.mappings["la"] = { "<cmd>  Lspsaga code_action<CR>", "Code Action" }
 lvim.builtin.which_key.mappings["ls"] = { "<cmd>  Lspsaga outline<CR>", "Document symbol" }
 lvim.builtin.which_key.mappings["lr"] = { "<cmd>  Lspsaga rename<CR>", "Rename" }
-lvim.builtin.which_key.mappings["lci"] = { "<cmd>  Lspsaga incoming_calls<CR>", "Incomming calls" }
-lvim.builtin.which_key.mappings["lco"] = { "<cmd>  Lspsaga outgoing_calls<CR>", "OutGoing calls" }
+-- lvim.builtin.which_key.mappings["lci"] = { "<cmd>  Lspsaga incoming_calls<CR>", "Incomming calls" }
+-- lvim.builtin.which_key.mappings["lco"] = { "<cmd>  Lspsaga outgoing_calls<CR>", "OutGoing calls" }
 lvim.builtin.which_key.mappings["ldp"] = { "<cmd>  Lspsaga diagnostic_jump_prev <CR>", "Dianostic Jump Prev" }
 lvim.builtin.which_key.mappings["ldn"] = { "<cmd>  Lspsaga diagnostic_jump_next<CR>", "Diagnostic Jump Next" }
 
+lvim.builtin.which_key.mappings["lc"] = {
+    name = "In/Out Calls",
+    ["i"] = { "<cmd>  Lspsaga incoming_calls<CR>", "Incomming calls" },
+    ["o"] = { "<cmd>  Lspsaga outgoing_calls<CR>", "OutGoing calls" }
+}
 
 require("lspsaga").setup({
     outline = {
