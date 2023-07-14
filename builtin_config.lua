@@ -31,17 +31,8 @@ lvim.builtin.luasnip.sources.friendly_snippets = false
 -- lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
 lvim.builtin.indentlines.options.show_current_context = true
-lvim.builtin.telescope.defaults.path_display = {
-    shorten = {
-        len = 3
-    }
-}
-lvim.builtin.telescope.defaults.file_ignore_patterns = { "^./.git/", "^./build/", "^.vscode/", "%%-test%-data",
-    "^.cache/" }
 lvim.builtin.dap.active = true
 
-local actions = require("telescope.actions")
-lvim.builtin.telescope.defaults.mappings.n["q"] = actions.close
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
