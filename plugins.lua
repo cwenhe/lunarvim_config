@@ -27,9 +27,9 @@ lvim.plugins = {
             require("config.session")
         end
     },
-    {
-        "ianding1/leetcode.vim"
-    },
+    -- {
+    --     "ianding1/leetcode.vim"
+    -- },
     {
         "mhartington/formatter.nvim",
         config = function()
@@ -37,7 +37,7 @@ lvim.plugins = {
         end,
     },
     {
-        "glepnir/lspsaga.nvim",
+        "nvimdev/lspsaga.nvim",
         event = "LspAttach",
         config = function()
             require("config.lspsaga")
@@ -100,73 +100,23 @@ lvim.plugins = {
             }
         end,
     }
+    -- ,
     -- {
-    --     'tzachar/cmp-tabnine',
-    --     build = './install.sh',
-    --     dependencies = 'hrsh7th/nvim-cmp',
-    --     event = "InsertEnter"
-    -- }
+    --     "zbirenbaum/copilot-cmp",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("config.copilot")
+    --     end,
+    -- },
     -- {
     --     "zbirenbaum/copilot.lua",
     --     cmd = "Copilot",
     --     event = "InsertEnter",
     --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = { enabled = false },
+    --             panel = { enabled = false },
+    --         })
     --     end,
-    --     require("copilot").setup({})
-    -- }
-    -- {
-    --     "windwp/nvim-spectre",
-    --     event = "BufRead",
-    --     config = function()
-    --         require("spectre").setup()
-    --     end,
-    -- },
-    -- {
-    --     "folke/flash.nvim",
-    --     event = "VeryLazy",
-    --     ---@type Flash.Config
-    --     opts = {},
-    --     keys = {
-    --         {
-    --             "s",
-    --             mode = { "n", "x", "o" },
-    --             function()
-    --                 require("flash").jump()
-    --             end,
-    --             desc = "Flash",
-    --         },
-    --         {
-    --             "S",
-    --             mode = { "n", "o", "x" },
-    --             function()
-    --                 require("flash").treesitter()
-    --             end,
-    --             desc = "Flash Treesitter",
-    --         },
-    --         {
-    --             "r",
-    --             mode = "o",
-    --             function()
-    --                 require("flash").remote()
-    --             end,
-    --             desc = "Remote Flash",
-    --         },
-    --         {
-    --             "R",
-    --             mode = { "o", "x" },
-    --             function()
-    --                 require("flash").treesitter_search()
-    --             end,
-    --             desc = "Flash Treesitter Search",
-    --         },
-    --         {
-    --             "<c-s>",
-    --             mode = { "c" },
-    --             function()
-    --                 require("flash").toggle()
-    --             end,
-    --             desc = "Toggle Flash Search",
-    --         },
-    --     },
     -- }
 }
