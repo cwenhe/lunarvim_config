@@ -30,8 +30,9 @@ require("lspsaga").setup({
         auto_close = true,
         auto_resize = true,
         max_height = 0.5,
+        detail = false,
         custom_sort = nil,
-        -- layout = 'float',
+        layout = 'float',
         keys = {
             expand_or_jump = 'o',
             quit = "q",

@@ -3,6 +3,7 @@
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<M-o>"] = ":ClangdSwitchSourceHeader<cr>"
 lvim.keys.normal_mode["q"] = "<cmd> cclose<CR>"
+lvim.keys.visual_mode["q"] = "<esc>"
 lvim.keys.normal_mode["ng"] = "<cmd>lua require('neogen').generate() <CR>"
 -- lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
 -- lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
