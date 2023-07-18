@@ -49,14 +49,14 @@ lvim.plugins = {
         }
 
     },
-    {
-        'tzachar/cmp-tabnine', after = "nvim-cmp", build = './install.sh', dependencies = 'hrsh7th/nvim-cmp'
-    },
-    {
-        'tzachar/cmp-tabnine',
-        build = './install.sh',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
+    -- {
+    --     'tzachar/cmp-tabnine', after = "nvim-cmp", build = './install.sh', dependencies = 'hrsh7th/nvim-cmp'
+    -- },
+    -- {
+    --     'tzachar/cmp-tabnine',
+    --     build = './install.sh',
+    --     dependencies = 'hrsh7th/nvim-cmp',
+    -- },
     -- {
     --     'tzachar/cmp-tabnine', after = "nvim-cmp", build = './install.sh', dependencies = 'hrsh7th/nvim-cmp'
     -- },
@@ -100,23 +100,23 @@ lvim.plugins = {
             }
         end,
     }
-    -- ,
-    -- {
-    --     "zbirenbaum/copilot-cmp",
-    --     event = "InsertEnter",
-    --     config = function()
-    --         require("config.copilot")
-    --     end,
-    -- },
-    -- {
-    --     "zbirenbaum/copilot.lua",
-    --     cmd = "Copilot",
-    --     event = "InsertEnter",
-    --     config = function()
-    --         require("copilot").setup({
-    --             suggestion = { enabled = false },
-    --             panel = { enabled = false },
-    --         })
-    --     end,
-    -- }
+    ,
+    {
+        "zbirenbaum/copilot-cmp",
+        event = "InsertEnter",
+        config = function()
+            require("config.copilot")
+        end,
+    },
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
+    }
 }

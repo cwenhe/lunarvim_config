@@ -17,6 +17,7 @@ local compare = require('cmp.config.compare')
 lvim.builtin.cmp.sorting = {
     priority_weight = 2,
     comparators = {
+        require("copilot_cmp.comparators").prioritize,
         require('cmp_tabnine.compare'),
         -- compare.score_offset, -- not good at all
         compare.locality,
