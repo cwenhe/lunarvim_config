@@ -1,9 +1,16 @@
-lvim.lsp.buffer_mappings.normal_mode['gr'] = { " <Cmd>Lspsaga finder<CR>", "Find Reference" }
-lvim.lsp.buffer_mappings.normal_mode['K'] = { " <Cmd>Lspsaga hover_doc<CR>", "Hover" }
-lvim.lsp.buffer_mappings.normal_mode['gp'] = { " <Cmd>Lspsaga peek_definition<CR>", "Peek Definition" }
-lvim.lsp.buffer_mappings.normal_mode['gt'] = { " <Cmd>Lspsaga peek_type_definition<CR>", "Peek Type Definition" }
-lvim.lsp.buffer_mappings.normal_mode['gd'] = { " <Cmd>Lspsaga goto_definition<CR>", "Goto Definition" }
-lvim.lsp.buffer_mappings.normal_mode['gm'] = { " <Cmd>Lspsaga outline<CR>", "Show Outline" }
+-- lvim.lsp.buffer_mappings.normal_mode['gr'] = { " <Cmd>Lspsaga finder<CR>", "Find Reference" }
+-- lvim.lsp.buffer_mappings.normal_mode['K'] = { " <Cmd>Lspsaga hover_doc<CR>", "Hover" }
+-- lvim.lsp.buffer_mappings.normal_mode['gp'] = { " <Cmd>Lspsaga peek_definition<CR>", "Peek Definition" }
+-- lvim.lsp.buffer_mappings.normal_mode['gt'] = { " <Cmd>Lspsaga peek_type_definition<CR>", "Peek Type Definition" }
+-- lvim.lsp.buffer_mappings.normal_mode['gd'] = { " <Cmd>Lspsaga goto_definition<CR>", "Goto Definition" }
+-- lvim.lsp.buffer_mappings.normal_mode['gm'] = { " <Cmd>Lspsaga outline<CR>", "Show Outline" }
+-- 使用正常的key
+lvim.keys.normal_mode['gr'] = " <Cmd>Lspsaga finder<CR>"
+lvim.keys.normal_mode['K'] = " <Cmd>Lspsaga hover_doc<CR>"
+lvim.keys.normal_mode['gp'] = " <Cmd>Lspsaga peek_definition<CR>"
+lvim.keys.normal_mode['gt'] = " <Cmd>Lspsaga peek_type_definition<CR>"
+lvim.keys.normal_mode['gd'] = " <Cmd>Lspsaga goto_definition<CR>"
+lvim.keys.normal_mode['gm'] = " <Cmd>Lspsaga outline<CR>"
 lvim.builtin.which_key.mappings["la"] = { "<cmd>  Lspsaga code_action<CR>", "Code Action" }
 lvim.builtin.which_key.mappings["ls"] = { "<cmd>  Lspsaga outline<CR>", "Document symbol" }
 lvim.builtin.which_key.mappings["lr"] = { "<cmd>  Lspsaga rename<CR>", "Rename" }

@@ -102,3 +102,9 @@ lvim.builtin.alpha.dashboard.section.buttons.entries = {
 ---
 ---
 -- lvim.builtin.which_key.mappings["lf"] = { "<cmd> FormatWriter<cr>", "format file" }
+--
+lvim.builtin.which_key.mappings["t"] = {
+    name = "Text",
+    c = { "<cmd> windo diffthis <cr>", "compare text" },
+    s = { "<cmd> windo diffoff <cr>", "stop compare text" },
+}
