@@ -44,6 +44,7 @@ require("config.lspsaga")
 require("config.luasnip")
 require("config.bigfile")
 require("config.telescope")
+require("config.nvimtree")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
