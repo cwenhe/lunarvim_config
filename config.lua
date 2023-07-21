@@ -32,7 +32,6 @@ end
 init_package_path()
 
 require("builtin_config")
-require("mappings")
 require("plugins")
 require("config.dap")
 require("config.tasks")
@@ -44,6 +43,7 @@ require("config.luasnip")
 require("config.bigfile")
 require("config.telescope")
 require("config.nvimtree")
+require("mappings")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
