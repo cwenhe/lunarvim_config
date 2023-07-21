@@ -69,7 +69,8 @@ lvim.autocommands = {
                 -- local highlighter = require "vim.treesitter.highlighter"
                 -- local ts_was_active = highlighter.active[args.buf]
                 local file_size = vim.fn.getfsize(args.file)
-                if (file_size > 1024 * 1024) then
+                -- if (file_size > 1024 * 1024) then
+                if (file_size > 1024 * 100) then
                     require("cmp").setup({ enabled = false })
                     -- if (ts_was_active) then
                     -- vim.notify("File larger than 1MB, turned off syntax highlighting")
@@ -79,3 +80,5 @@ lvim.autocommands = {
         }
     }
 }
+lvim.builtin.cmp.cmdline.enable = true
+-- lvim.builtin.cmp.active = false

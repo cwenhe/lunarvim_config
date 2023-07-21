@@ -1,28 +1,48 @@
-require("copilot_cmp").setup({})
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
-local has_words_before = function()
-    if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-end
-lvim.builtin.cmp.mapping =
-{
-    ["<Tab>"] = vim.schedule_wrap(function(fallback)
-        if require('cmp').visible() and has_words_before() then
-            require('cmp').select_next_item({ behavior = require('cmp').SelectBehavior.Select })
-        else
-            fallback()
-        end
-    end),
-}
-
-
--- -- lspkind.lua
--- local lspkind = require("lspkind")
--- lspkind.init({
---   symbol_map = {
---     Copilot = "",
---   },
+-- require("copilot").setup({
+--     suggestion = { enabled = false },
+--     panel = { enabled = false },
 -- })
 
--- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
+require('copilot').setup({
+    panel = {
+        enabled = false,
+        auto_refresh = false,
+        keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "<F5>",
+            open = "<M-CR>"
+        },
+        layout = {
+            position = "bottom", -- | top | left | right
+            ratio = 0.4
+        },
+    },
+    suggestion = {
+        enabled = false,
+        auto_trigger = false,
+        debounce = 75,
+        keymap = {
+            accept = "<M-l>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+        },
+    },
+    filetypes = {
+        yaml = false,
+        markdown = false,
+        help = false,
+        gitcommit = false,
+        gitrebase = false,
+        hgcommit = false,
+        svn = false,
+        cvs = false,
+        ["."] = false,
+    },
+    copilot_node_command = 'node', -- Node.js version must be > 16.x
+    server_opts_overrides = {},
+})
