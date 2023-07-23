@@ -80,5 +80,5 @@ lvim.autocommands = {
         }
     }
 }
-lvim.builtin.cmp.cmdline.enable = true
+lvim.builtin.cmp.cmdline.enable = false
 -- lvim.builtin.cmp.active = false
