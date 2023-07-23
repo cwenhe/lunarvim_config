@@ -20,6 +20,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+-- lvim.builtin.lualine.options.theme = 'powerline_dark'
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true

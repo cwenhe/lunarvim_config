@@ -115,5 +115,13 @@ lvim.plugins = {
         config = function()
             require("config.copilot")
         end,
-    }
+    },
+    { "lunarvim/colorschemes" },
+    -- {
+    --     "kevinhwang91/nvim-bqf",
+    --     event = { "BufRead", "BufNew" },
+    --     config = function()
+    --         require('config.nvim-bqf')
+    --     end,
+    -- },
 }
