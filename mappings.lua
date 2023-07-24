@@ -8,8 +8,6 @@ lvim.keys.normal_mode["ng"] = "<cmd>lua require('neogen').generate() <CR>"
 -- lvim.keys.normal_mode["ns"] = ":HopChar2<cr>"
 -- lvim.keys.normal_mode["nw"] = ":HopWord<cr>"
 lvim.keys.normal_mode["go"] = "<C-o>"
-lvim.keys.normal_mode["<M-h>"] = ":ToggleTerm size=40 direction=horizontal <CR>"
-lvim.keys.term_mode["<M-h>"] = "<C-\\><C-n> <cmd> q<CR>"
 lvim.keys.insert_mode["jk"] = "<esc>l"
 lvim.keys.insert_mode[";;"] = "::"
 
@@ -111,25 +109,7 @@ lvim.builtin.which_key.mappings["t"] = {
 
 
 
------------------------begin Lspsaga config -------------------------------------------
-lvim.keys.normal_mode['gr'] = " <Cmd>Lspsaga finder<CR>"
-lvim.keys.normal_mode['K'] = " <Cmd>Lspsaga hover_doc<CR>"
-lvim.keys.normal_mode['gp'] = " <Cmd>Lspsaga peek_definition<CR>"
-lvim.keys.normal_mode['gt'] = " <Cmd>Lspsaga peek_type_definition<CR>"
-lvim.keys.normal_mode['gd'] = " <Cmd>Lspsaga goto_definition<CR>"
-lvim.keys.normal_mode['gm'] = " <Cmd>Lspsaga outline<CR>"
-lvim.builtin.which_key.mappings["la"] = { "<cmd>  Lspsaga code_action<CR>", "Code Action" }
-lvim.builtin.which_key.mappings["ls"] = { "<cmd>  Lspsaga outline<CR>", "Document symbol" }
-lvim.builtin.which_key.mappings["lr"] = { "<cmd>  Lspsaga rename<CR>", "Rename" }
--- lvim.builtin.which_key.mappings["lci"] = { "<cmd>  Lspsaga incoming_calls<CR>", "Incomming calls" }
--- lvim.builtin.which_key.mappings["lco"] = { "<cmd>  Lspsaga outgoing_calls<CR>", "OutGoing calls" }
-lvim.builtin.which_key.mappings["ldp"] = { "<cmd>  Lspsaga diagnostic_jump_prev <CR>", "Dianostic Jump Prev" }
-lvim.builtin.which_key.mappings["ldn"] = { "<cmd>  Lspsaga diagnostic_jump_next<CR>", "Diagnostic Jump Next" }
-
-lvim.builtin.which_key.mappings["lc"] = {
-    name = "In/Out Calls",
-    ["i"] = { "<cmd>  Lspsaga incoming_calls<CR>", "Incomming calls" },
-    ["o"] = { "<cmd>  Lspsaga outgoing_calls<CR>", "OutGoing calls" }
-}
-
------------------------end Lspsaga config -------------------------------------------
+---
+---
+require("mappings.lspsaga");
+require("mappings.terminal")
