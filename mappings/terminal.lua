@@ -7,11 +7,11 @@ lvim.builtin.terminal.execs = {
 
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
-    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    -- vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
     -- vim.keymap.set('t', 'q', [[<C-\><C-n><Cmd>q<CR>]], opts)
     vim.keymap.set('t', 'qq', [[<Cmd>q<CR>]], opts)
     vim.keymap.set('n', 'q', [[<Cmd>q<CR>]], opts)
-    vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+    -- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     -- vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
     -- vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
     -- vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
