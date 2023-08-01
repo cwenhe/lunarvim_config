@@ -34,6 +34,6 @@ require("formatter").setup {
         }
     }
 }
-
-lvim.builtin.which_key.mappings['df'] = { "<cmd>  Format<CR>", "format document" }
+lvim.builtin.which_key.mappings['lf'] = nil
+lvim.builtin.which_key.mappings['lf'] = { "<cmd>  Format<CR>", "format document" }
 -- lvim.lsp.buffer_mappings.normal_mode['gd'] = { " <Cmd>Lspsaga goto_definition<CR>", "Goto Definition" }
