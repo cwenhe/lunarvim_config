@@ -107,6 +107,7 @@ lvim.builtin.which_key.mappings["t"] = {
     s = { "<cmd> windo diffoff <cr>", "stop compare text" },
 }
 
+lvim.builtin.which_key.mappings["lR"] = { "<cmd> LspRestart <CR>", " Lsp Restart" }
 
 
 ---
