@@ -30,7 +30,7 @@ lvim.builtin.project.patterns = { ".git", "conf.json" }
 lvim.builtin.luasnip.sources.friendly_snippets = false
 -- lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
-lvim.builtin.indentlines.options.show_current_context = true
+-- lvim.builtin.indentlines.options.show_current_context = true
 lvim.builtin.dap.active = true
 
 -- lvim.builtin.gitsigns.opts.current_line_blame = true

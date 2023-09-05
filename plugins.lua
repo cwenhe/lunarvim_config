@@ -101,21 +101,21 @@ lvim.plugins = {
         end,
     }
     ,
-    {
-        "zbirenbaum/copilot-cmp",
-        event = "InsertEnter",
-        config = function()
-            require("config.copilot_cmp")
-        end,
-    },
-    {
-        "zbirenbaum/copilot.lua",
-        event = "InsertEnter",
-        cmd = "Copilot",
-        config = function()
-            require("config.copilot")
-        end,
-    },
+    -- {
+    --     "zbirenbaum/copilot-cmp",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("config.copilot_cmp")
+    --     end,
+    -- },
+    -- {
+    --     "zbirenbaum/copilot.lua",
+    --     event = "InsertEnter",
+    --     cmd = "Copilot",
+    --     config = function()
+    --         require("config.copilot")
+    --     end,
+    -- },
     { "lunarvim/colorschemes" },
     {
         "will133/vim-dirdiff"
