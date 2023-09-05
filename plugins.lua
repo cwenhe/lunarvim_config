@@ -134,4 +134,14 @@ lvim.plugins = {
     --     opts = {},
     --     config = function(_, opts) require 'lsp_signature'.setup(opts) end
     -- }
+    {
+        "jcdickinson/codeium.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        config = function()
+            require("config.codeium")
+        end
+    }
 }

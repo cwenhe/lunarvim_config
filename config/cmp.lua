@@ -17,7 +17,8 @@ local compare = require('cmp.config.compare')
 lvim.builtin.cmp.sorting = {
     priority_weight = 2,
     comparators = {
-        require("copilot_cmp.comparators").prioritize,
+        -- require("codeium.comparators").prioritize,
+        -- require("copilot_cmp.comparators").prioritize,
         -- require('cmp_tabnine.compare'),
         -- compare.score_offset, -- not good at all
         compare.locality,
@@ -32,7 +33,6 @@ lvim.builtin.cmp.sorting = {
         -- compare.length, -- useless
     }
 }
-
 -- 设置最大提示数量
 for k, v in ipairs(lvim.builtin.cmp.sources) do
     -- print(k, v.name, v.max_item_count)
