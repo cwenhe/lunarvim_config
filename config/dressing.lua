@@ -1,4 +1,4 @@
-require('dressing').setup({
+require("dressing").setup({
     input = {
         -- Set to false to disable the vim.ui.input implementation
         enabled = true,
@@ -16,7 +16,6 @@ require('dressing').setup({
         start_in_insert = true,
 
         -- These are passed to nvim_open_win
-        anchor = "SW",
         border = "rounded",
         -- 'editor' and 'win' will default to being centered
         relative = "cursor",
@@ -119,8 +118,9 @@ require('dressing').setup({
 
         -- Options for built-in selector
         builtin = {
+            -- Display numbers for options and set up keymaps
+            show_numbers = true,
             -- These are passed to nvim_open_win
-            anchor = "NW",
             border = "rounded",
             -- 'editor' and 'win' will default to being centered
             relative = "editor",
@@ -164,3 +164,4 @@ require('dressing').setup({
         get_config = nil,
     },
 })
+
