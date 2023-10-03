@@ -12,7 +12,8 @@ lvim.format_on_save = {
 lvim.leader = "space"
 
 -- -- Change theme settings
-lvim.colorscheme = "tokyonight-day"
+-- lvim.colorscheme = "tokyonight-day"
+lvim.colorscheme = "vscode"
 
 lvim.builtin.lualine.style = "default"
 lvim.builtin.alpha.active = true
@@ -30,7 +31,7 @@ lvim.builtin.project.patterns = { ".git", "conf.json" }
 lvim.builtin.luasnip.sources.friendly_snippets = false
 -- lvim.builtin.luasnip.sources.friendly_snippets = false
 lvim.builtin.indentlines.options.show_trailing_blankline_indent = true
--- lvim.builtin.indentlines.options.show_current_context = true
+lvim.builtin.indentlines.options.show_current_context = true
 lvim.builtin.dap.active = true
 
 -- lvim.builtin.gitsigns.opts.current_line_blame = true

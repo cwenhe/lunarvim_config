@@ -143,5 +143,8 @@ lvim.plugins = {
         config = function()
             require("config.codeium")
         end
+    },
+    {
+        "Mofiqul/vscode.nvim"
     }
 }

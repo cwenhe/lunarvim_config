@@ -13,6 +13,7 @@ vim.opt.listchars = { tab = '->' }
 -- vim.opt.listchars = { space = '.', tab = '->' }
 vim.opt.list = true
 vim.opt.expandtab = true
+vim.o.background = 'light'
 
 
 
