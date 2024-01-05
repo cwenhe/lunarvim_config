@@ -352,8 +352,14 @@
     "description": "define variable"
   },
   "declaration setbind function": {
-    "prefix": "dbind",
+    "prefix": "setBind",
     "body": [
+      "/**",
+      "* @brief 绑定数据解析",
+      "*",
+      "* @param binder 解析器",
+      "* @param load 是否是加载模式",
+      "*/",
       "void setBind(cppbind::Binder* binder, bool load);"
     ],
     "description": "declare setbind function"
