@@ -32,7 +32,9 @@ lvim.builtin.bigfile.config.pattern = function(bufnr, filesize_mib)
     -- local file_length = #file_contents
     local filetype = vim.filetype.match({ buf = bufnr })
     local file_size = vim.fn.getfsize(vim.api.nvim_buf_get_name(bufnr))
-    if file_size > 1024 * 10 and filetype == "json" then
+    local max_file_size = 1024 * 10
+    if file_size > max_file_size and filetype == "json" then
+        print("current file size:" .. file_size .. " more than max size is:" .. max_file_size)
         return true
     end
 end
