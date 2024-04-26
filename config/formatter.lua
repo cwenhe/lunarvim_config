@@ -17,7 +17,7 @@ require("formatter").setup {
 
         cpp = require("formatter.filetypes.cpp").clangformat,
         cmake = require("formatter.filetypes.cmake").cmakeformat,
-        -- Use the special "*" filetype for defining formatter configurations on
+        -- Use the special "*" filetype for defining formatter configurations n
         -- any filetype
         ["*"] = {
             -- "formatter.filetypes.any" defines default configurations for any
@@ -35,5 +35,7 @@ require("formatter").setup {
     }
 }
 lvim.builtin.which_key.mappings['lf'] = nil
-lvim.builtin.which_key.mappings['lf'] = { "<cmd>  Format<CR>", "format document" }
+-- lvim.builtin.which_key.mappings['df'] = { "<cmd>  Format<CR>", "format document" }
+lvim.keys.normal_mode["<M-f>"] = "<cmd> Format<CR>"
+lvim.keys.insert_mode["<M-f>"] = "<cmd> Format<CR>"
 -- lvim.lsp.buffer_mappings.normal_mode['gd'] = { " <Cmd>Lspsaga goto_definition<CR>", "Goto Definition" }

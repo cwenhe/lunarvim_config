@@ -32,9 +32,9 @@ lvim.plugins = {
     -- },
     {
         "mhartington/formatter.nvim",
-        config = function()
-            require("config.formatter")
-        end,
+        -- config = function()
+        --     require("config.formatter")
+        -- end,
     },
     {
         "nvimdev/lspsaga.nvim",

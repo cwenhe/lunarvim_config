@@ -80,5 +80,7 @@ lvim.autocommands = {
         }
     }
 }
+
+-- lvim.builtin.cmp.experimental.ghost_text = true
 lvim.builtin.cmp.cmdline.enable = false
 -- lvim.builtin.cmp.active = false
