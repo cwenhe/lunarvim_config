@@ -1,6 +1,8 @@
 -- general
 lvim.log.level = "error"
-lvim.lsp.log_levels = vim.log.levels.OFF
+lvim.lsp.log_levels = "OFF"
+-- vim.lsp.log_levels.error
+-- vim.lsp.set_log_level("OFF")
 table.insert(lvim.lsp.automatic_configuration.skipped_servers, 1, { string = "clangd" })
 -- lvim.lsp.log_levels = "OFF"
 lvim.format_on_save = {
